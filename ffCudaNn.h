@@ -1,6 +1,7 @@
 ﻿#pragma once
 
 #include <vector>
+#include <fstream>
 
 namespace ff
 {
@@ -33,6 +34,10 @@ namespace ff
 
 		void PullFromGpu();
 
+    void WriteDataToFile(std::ofstream& file);
+
+    void LoadDataFromFile(FILE* file);
+
 	public:
 		int _d0, _d1, _d2, _d3, _dataSize;
 		std::vector<float> _data;
@@ -54,6 +59,10 @@ namespace ff
 
 		virtual void UpdateWs(float learningRate, float beta1, float beta2, float beta1t, float beta2t) {}
 
+    virtual void SaveWeights(std::ofstream& file) {}
+
+    virtual void LoadWeights(FILE* file) {}
+
 		virtual void Pull() {}
 
 	public:
@@ -70,6 +79,10 @@ namespace ff
 		const CudaTensor* Backward(const CudaTensor*, const int layerIndex) override;
 
 		void UpdateWs(float learningRate, float beta1, float beta2, float beta1t, float beta2t) override;
+
+    void SaveWeights(std::ofstream& file) override;
+
+    void LoadWeights(FILE* file) override;
 
 		void Pull() override;
 
@@ -97,6 +110,10 @@ namespace ff
 		const CudaTensor* Backward(const CudaTensor*, const int layerIndex) override;
 
 		void UpdateWs(float learningRate, float beta1, float beta2, float beta1t, float beta2t) override;
+
+    void SaveWeights(std::ofstream& file) override;
+
+    void LoadWeights(FILE* file) override;
 
 		void Pull() override;
 
@@ -160,6 +177,10 @@ namespace ff
 		const CudaTensor* Backward(const CudaTensor*, const int layerIndex) override;
 
 		void UpdateWs(float learningRate, float beta1, float beta2, float beta1t, float beta2t) override;
+
+    void SaveWeights(std::ofstream& file) override;
+
+    void LoadWeights(FILE* file) override;
 
 		void Pull() override;
 
@@ -278,6 +299,10 @@ namespace ff
 		void Backward(const CudaTensor* yLabel);
 
 		void UpdateWs(float learningRate);
+
+		void SaveWeights(const char *weights_file);
+
+		void LoadWeights(const char *weights_file);
 
 		bool IsTraining() { return _train; }
 

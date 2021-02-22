@@ -5,7 +5,7 @@
 
 #include "ffCudaNn.h"
 
-int mnist();
+int mnist(int argc, char* argv[]);
 int cifar10();
 
 namespace ff {
@@ -192,9 +192,9 @@ int simple() {
   return 0;
 }
 
-int main() {
+int main(int argc, char* argv[]) {
   // return TestQuatNorm();
   // return cifar10();
-  return mnist();
+  return mnist(argc, argv);
   // return simple();
 }

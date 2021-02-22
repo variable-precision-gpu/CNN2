@@ -101,6 +101,20 @@ void CudaTensor::PullFromGpu() {
   assert(err == cudaSuccess);
 }
 
+void CudaTensor::WriteDataToFile(std::ofstream& file) {
+  PullFromGpu();
+  for (int i = 0; i < _dataSize; i++) {
+    file << std::fixed << _data[i] << "\n";
+  }
+}
+
+void CudaTensor::LoadDataFromFile(FILE* file) {
+  for (int i = 0; i < _dataSize; i++) {
+    fscanf(file, "%f", &(_data[i]));
+  }
+  PushToGpu();
+}
+
 ///////////////////////////////////////////////////////////////////////
 FcLayer::FcLayer(CudaNn* nn, int inDim, int outDim)
     : CudaLayer(nn), _pX(nullptr) {
@@ -269,6 +283,16 @@ __global__ void UpdateWs_Cuda(float learningRate, float beta1, float beta2,
   wG_v[index] = v;
   float impv = learningRate * unbiased_m / (sqrtf(unbiased_v) + 1e-8f);
   w[index] -= impv;
+}
+
+void FcLayer::SaveWeights(std::ofstream& file) {
+  _w.WriteDataToFile(file);
+  _b.WriteDataToFile(file);
+}
+
+void FcLayer::LoadWeights(FILE* file) {
+  _w.LoadDataFromFile(file);
+  _b.LoadDataFromFile(file);
 }
 
 void FcLayer::UpdateWs(float learningRate, float beta1, float beta2,
@@ -550,6 +574,16 @@ void Conv2dLayer::UpdateWs(float learningRate, float beta1, float beta2,
                                       _bG_m._dataGpu, _bG_v._dataGpu, _b._d0);
     assert(cudaGetLastError() == cudaSuccess);
   }
+}
+
+void Conv2dLayer::SaveWeights(std::ofstream& file) {
+  _w.WriteDataToFile(file);
+  _b.WriteDataToFile(file);
+}
+
+void Conv2dLayer::LoadWeights(FILE* file) {
+  _w.LoadDataFromFile(file);
+  _b.LoadDataFromFile(file);
 }
 
 void Conv2dLayer::Pull() {
@@ -990,6 +1024,14 @@ void BatchNorm2dLayer::UpdateWs(float learningRate, float beta1, float beta2,
   }
 }
 
+void BatchNorm2dLayer::SaveWeights(std::ofstream& file) {
+  _w.WriteDataToFile(file);
+}
+
+void BatchNorm2dLayer::LoadWeights(FILE* file) {
+  _w.LoadDataFromFile(file);
+}
+
 void BatchNorm2dLayer::Pull() {
   _meanAndVariance.PullFromGpu();
   _meanAndVarianceAcc.PullFromGpu();
@@ -1328,6 +1370,24 @@ void CudaNn::Pull() {
   size_t numLayer = _layers.size();
   for (size_t i = 0; i < numLayer; ++i) {
     _layers[i]->Pull();
+  }
+}
+
+void CudaNn::SaveWeights(const char* weights_file) {
+  std::ofstream file(weights_file);
+  printf("Starting save\n");
+  size_t numLayer = _layers.size();
+  for (size_t i = 0; i < numLayer; ++i) {
+    _layers[i]->SaveWeights(file);
+  }
+}
+
+void CudaNn::LoadWeights(const char* weights_file) {
+  FILE* file = fopen(weights_file, "r");
+  printf("Starting load\n");
+  size_t numLayer = _layers.size();
+  for (size_t i = 0; i < numLayer; ++i) {
+    _layers[i]->LoadWeights(file);
   }
 }
 
