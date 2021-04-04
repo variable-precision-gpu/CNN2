@@ -1340,6 +1340,38 @@ const CudaTensor* CudaNn::Forward(const CudaTensor* x, bool train) {
   for (size_t i = 0; i < numLayer; ++i) {
     if (nullptr == x) return nullptr;
 
+    // [afterdusk] Uncomment to set precision of layers
+    // switch (i) {
+    //   case 0:  // Conv2d(3, 1, 4, 1, 1)
+    //   case 1:  // Relu
+    //   case 2:  // MaxPool
+    //     setenv("VF_SIGNIFICAND", "8", 1);
+    //     setenv("VF_EXPONENT_MIN", "-132", 1);
+    //     setenv("VF_EXPONENT_MAX", "128", 1);
+    //     break;
+    //   case 3:  // Conv2d(3, 4, 8, 1, 1)
+    //   case 4:  // Relu
+    //   case 5:  // MaxPool
+    //     setenv("VF_SIGNIFICAND", "4", 1);
+    //     setenv("VF_EXPONENT_MIN", "-128", 1);
+    //     setenv("VF_EXPONENT_MAX", "128", 1);
+    //     break;
+    //   case 6:  // Conv2d(3, 8, 16, 1, 1)
+    //   case 7:  // Relu
+    //     setenv("VF_SIGNIFICAND", "3", 1);
+    //     setenv("VF_EXPONENT_MIN", "-7", 1);
+    //     setenv("VF_EXPONENT_MAX", "8", 1);
+    //     break;
+    //   case 8:   // Fc(7 * 7 * 16, 1000)
+    //   case 9:   // Relu
+    //   case 10:  // Fc(1000, 10)
+    //   case 11:  // Softmax
+    //     setenv("VF_SIGNIFICAND", "2", 1);
+    //     setenv("VF_EXPONENT_MIN", "-6", 1);
+    //     setenv("VF_EXPONENT_MAX", "8", 1);
+    //     break;
+    // }
+
     y = _layers[i]->Forward(x);
     x = y;
   }

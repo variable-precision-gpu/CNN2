@@ -1,0 +1,89 @@
+ptxas info    : 1104 bytes gmem
+ptxas info    : Compiling entry function '_ZN2ff22BackwardConv2d_Bg_CudaEPfPKfiiii' for 'sm_60'
+ptxas info    : Function properties for _ZN2ff22BackwardConv2d_Bg_CudaEPfPKfiiii
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 17 registers, 352 bytes cmem[0]
+ptxas info    : Compiling entry function '_ZN2ff24BackwardBatchNorm2d_CudaILi256EEEvPfS1_S1_S1_PKfS3_S3_S3_S3_ii' for 'sm_60'
+ptxas info    : Function properties for _ZN2ff24BackwardBatchNorm2d_CudaILi256EEEvPfS1_S1_S1_PKfS3_S3_S3_S3_ii
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 35 registers, 4096 bytes smem, 400 bytes cmem[0], 32 bytes cmem[2]
+ptxas info    : Compiling entry function '_ZN2ff16ForwardRelu_CudaEPfPKfi' for 'sm_60'
+ptxas info    : Function properties for _ZN2ff16ForwardRelu_CudaEPfPKfi
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 7 registers, 340 bytes cmem[0]
+ptxas info    : Compiling entry function '_ZN2ff19ForwardSoftmax_CudaEPfPKfii' for 'sm_60'
+ptxas info    : Function properties for _ZN2ff19ForwardSoftmax_CudaEPfPKfii
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 25 registers, 344 bytes cmem[0], 24 bytes cmem[2]
+ptxas info    : Compiling entry function '_ZN2ff18BackwardFc_Xg_CudaEPfPKfS2_iiii' for 'sm_60'
+ptxas info    : Function properties for _ZN2ff18BackwardFc_Xg_CudaEPfPKfS2_iiii
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 19 registers, 360 bytes cmem[0]
+ptxas info    : Compiling entry function '_ZN2ff23ForwardBatchNorm2d_CudaEPfPKfiS2_S2_ii' for 'sm_60'
+ptxas info    : Function properties for _ZN2ff23ForwardBatchNorm2d_CudaEPfPKfiS2_S2_ii
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 19 registers, 368 bytes cmem[0], 32 bytes cmem[2]
+ptxas info    : Compiling entry function '_ZN2ff19BackwardSumOfSquresEPfPKfS2_i' for 'sm_60'
+ptxas info    : Function properties for _ZN2ff19BackwardSumOfSquresEPfPKfS2_i
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 8 registers, 348 bytes cmem[0]
+ptxas info    : Compiling entry function '_ZN2ff18ForwardConv2d_CudaEPfPKfS2_S2_iiiiiiiiii' for 'sm_60'
+ptxas info    : Function properties for _ZN2ff18ForwardConv2d_CudaEPfPKfS2_S2_iiiiiiiiii
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 32 registers, 392 bytes cmem[0]
+ptxas info    : Compiling entry function '_ZN2ff19ForwardMaxPool_CudaEPfS0_PKfiiii' for 'sm_60'
+ptxas info    : Function properties for _ZN2ff19ForwardMaxPool_CudaEPfS0_PKfiiii
+    64 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 20 registers, 360 bytes cmem[0]
+ptxas info    : Compiling entry function '_ZN2ff20ForwardQuatNorm_CudaEPfPKfii' for 'sm_60'
+ptxas info    : Function properties for _ZN2ff20ForwardQuatNorm_CudaEPfPKfii
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 19 registers, 344 bytes cmem[0], 16 bytes cmem[2]
+ptxas info    : Compiling entry function '_ZN2ff18BackwardFc_Wg_CudaEPfPKfS2_iiii' for 'sm_60'
+ptxas info    : Function properties for _ZN2ff18BackwardFc_Wg_CudaEPfPKfS2_iiii
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 25 registers, 360 bytes cmem[0]
+ptxas info    : Compiling entry function '_ZN2ff22BackwardConv2d_Wg_CudaEPfPKfS2_iiiiiiiiiii' for 'sm_60'
+ptxas info    : Function properties for _ZN2ff22BackwardConv2d_Wg_CudaEPfPKfS2_iiiiiiiiiii
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 21 registers, 388 bytes cmem[0], 12 bytes cmem[2]
+ptxas info    : Compiling entry function '_ZN2ff29ForwardBatchNorm2d_Train_CudaILi256EEEvPfS1_S1_S1_PKfS3_ii' for 'sm_60'
+ptxas info    : Function properties for _ZN2ff29ForwardBatchNorm2d_Train_CudaILi256EEEvPfS1_S1_S1_PKfS3_ii
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 27 registers, 2048 bytes smem, 376 bytes cmem[0], 24 bytes cmem[2]
+ptxas info    : Compiling entry function '_ZN2ff20BackwardMaxPool_CudaEPfPKfS2_iiii' for 'sm_60'
+ptxas info    : Function properties for _ZN2ff20BackwardMaxPool_CudaEPfPKfS2_iiii
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 16 registers, 360 bytes cmem[0]
+ptxas info    : Compiling entry function '_ZN2ff21BackwardQuatNorm_CudaEPfPKfS2_ii' for 'sm_60'
+ptxas info    : Function properties for _ZN2ff21BackwardQuatNorm_CudaEPfPKfS2_ii
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 25 registers, 352 bytes cmem[0], 56 bytes cmem[2]
+ptxas info    : Compiling entry function '_ZN2ff18BackwardFc_Bg_CudaEPfPKfii' for 'sm_60'
+ptxas info    : Function properties for _ZN2ff18BackwardFc_Bg_CudaEPfPKfii
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 16 registers, 344 bytes cmem[0]
+ptxas info    : Compiling entry function '_ZN2ff17BackwardRelu_CudaEPfPKfS2_i' for 'sm_60'
+ptxas info    : Function properties for _ZN2ff17BackwardRelu_CudaEPfPKfS2_i
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 6 registers, 348 bytes cmem[0]
+ptxas info    : Compiling entry function '_ZN2ff20BackwardSoftmax_CudaEPfPKfS2_ii' for 'sm_60'
+ptxas info    : Function properties for _ZN2ff20BackwardSoftmax_CudaEPfPKfS2_ii
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 14 registers, 352 bytes cmem[0]
+ptxas info    : Compiling entry function '_ZN2ff13UpdateWs_CudaEfffffPfPKfS0_S0_i' for 'sm_60'
+ptxas info    : Function properties for _ZN2ff13UpdateWs_CudaEfffffPfPKfS0_S0_i
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 21 registers, 380 bytes cmem[0], 16 bytes cmem[2]
+ptxas info    : Compiling entry function '_ZN2ff22BackwardConv2d_Xg_CudaEPfPKfS2_iiiiiiiiiii' for 'sm_60'
+ptxas info    : Function properties for _ZN2ff22BackwardConv2d_Xg_CudaEPfPKfS2_iiiiiiiiiii
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 32 registers, 388 bytes cmem[0], 12 bytes cmem[2]
+ptxas info    : Compiling entry function '_ZN2ff12Dropout_CudaEPfPKfS2_i' for 'sm_60'
+ptxas info    : Function properties for _ZN2ff12Dropout_CudaEPfPKfS2_i
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 8 registers, 348 bytes cmem[0]
+ptxas info    : Compiling entry function '_ZN2ff20LinearTransform_CudaEPfPKfS2_S2_iii' for 'sm_60'
+ptxas info    : Function properties for _ZN2ff20LinearTransform_CudaEPfPKfS2_S2_iii
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 26 registers, 364 bytes cmem[0]
